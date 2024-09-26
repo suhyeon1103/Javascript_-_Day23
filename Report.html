@@ -7,47 +7,105 @@
     <title>Document</title>
   </head>
   <body>
-    <!-- ### 1. **DOM 문제** DOM이란 무엇이며, JavaScript가 DOM을 조작할 수 있는 방법 중 하나를 설명하고, 해당 방법을 사용하는 예제 코드를 작성하세요.
-    - DOM(Doocument Object Model)은 웹 브라우저가 HTML 문서를 해석할 때 문서의 모든 내용을 트리 구로로 표현하는 것 입니다.
-    - JavaScript가 DOM을 조작할 수 있는 방법은 텍스트 콘텐츠 변경, 속성 변경, 스타일 변경 등이 있습니다. -->
+    <h1 class="heading"></h1>
+    <button class="button">Button</button>
 
-    const heading = document.getElementById('heading'); heading.textContent =
-    'New heading Text';
+    <script>
+      // ### 1. **DOM 문제**
+      // DOM이란 무엇이며, JavaScript가 DOM을 조작할 수 있는 방법 중 하나를 설명하고, 해당 방법을 사용하는 예제 코드를 작성하세요.
 
-    <!-- ### 2. **DOM 선택자 문제** `getElementById`, `querySelector`, `getElementsByClassName`의 차이점을 설명하고, 각각의 예시 코드를 작성하세요. -->
+      // DOM(Doocument Object Model)은 웹 브라우저가 HTML 문서를 해석할 때 문서의 모든 내용을 트리 구로로 표현하는 것 입니다.
+      // JavaScript가 DOM을 조작할 수 있는 방법은 텍스트 콘텐츠 변경, 속성 변경, 스타일 변경 등이 있습니다.
 
-    - getElementById : ID를 사용해 HTML 요소를 선택 ex) const heading =
-    document.getElementById('heading'); - getElementByClassName : 클래스명을
-    사용해 여러 HTML 요소를 선택 ex) const paragraphs =
-    document.getElementByClassName('text'); - querySelector : CSS 선택자를
-    사용해 첫 번째로 일피하는 HTML 요소를 선택 ex) const heading =
-    document.querySelector('#heading');
+      const h1 = document.getElementById("heading");
 
-    <!-- ### 3. **DOM 이벤트 문제** `addEventListener`를 사용해 버튼을 클릭할 때 콘솔에 "Button clicked!"를 출력하는 코드를 작성하세요. -->
+      // ### 2. **DOM 선택자 문제**
+      // `getElementById`, `querySelector`, `getElementsByClassName`의 차이점을 설명하고, 각각의 예시 코드를 작성하세요.
 
-    const button = document.querySelector('button');
-    button.addEventListener('click', funtion () {alert('Button clicked!'); });
+      // getElementById : ID를 사용해 HTML 요소를 선택
+      document.getElementById("heading");
 
-    <!-- ### 4. **BOM 문제** *(Extra)* BOM이란 무엇인지 정의하고, `window` 객체의 몇 가지 주요 기능을 설명하세요. 또한, `window.location` 객체를 사용하여 페이지를 리다이렉트하는 예시 코드를 작성하세요. -->
+      // querySelector : CSS 선택자를 사용해 첫 번째로 일치하는 HTML 요소를 선택
+      document.querySelector("#heading");
+      document.querySelector(".heading");
 
-    <!-- ### 5. **BOM history 문제** *(Extra)* - BOM에서 `window.history` 객체는 어떤 기능을 제공하나요? `history.back()`과 `history.forward()`를 사용하는 예시를 작성하세요. -->
+      // getElementByClassName : 클래스명을 사용해 여러 HTML 요소를 선택
+      document.getElementByClassName("heading");
 
-    <!-- ### 6. **CSSOM 문제** CSSOM이 무엇인지 설명하고, JavaScript를 사용해 HTML 요소의 CSS 스타일을 동적으로 변경하는 코드를 작성하세요. -->
-    <!-- 
-    -CSSOM은 CSS규칙을 트리 구조로 변환한 것 / CSS스타일 규칙을 나타냄 
-    ex) div {color: blue; } p { color: red; } -->
+      // ### 3. **DOM 이벤트 문제**
+      // `addEventListener`를 사용해 버튼을 클릭할 때 콘솔에 "Button clicked!"를 출력하는 코드를 작성하세요.
 
-    <!-- ### 7. **Reflow와 Repaint 문제** Reflow와 Repaint의 차이점을 설명하고, DOM 조작을 최소화하여 성능을 향상시킬 수 있는 방법을 예시와 함께 설명하세요. -->
+      const button = document.getElementById("button");
+      button.addEventListener("click", () => {
+        console.log("Button clicked!");
+      });
 
-    <!-- - DOM 변경이 발생할 때, 브라우저는 레이아웃을 다시 계산하거나 화면을 다시 그리는데 이를 Reflow, Repaint라고 합니다. 
-    - Reflow는 레이아웃 변경, Repaint는 시각적 속성(색상,배경 등)의 변경이라는 차이가 있습니다. 
-    - 스타일을 변경할 때마다 DOM 트리를 다시 계산해야 하므로, 한꺼번에 여러스타일을 변경하는 것이 좋습니다. 
-    ex)element.style.cssText = 'width: 100px; height: 200px; background-color: blue;'; -->
+      // ### 4. **BOM 문제** *(Extra)*
+      // BOM이란 무엇인지 정의하고, `window` 객체의 몇 가지 주요 기능을 설명하세요. 또한, `window.location` 객체를 사용하여 페이지를 리다이렉트하는 예시 코드를 작성하세요. -->
 
-    <!-- ### 8. **JavaScript 실행 맥락 문제** *(Extra)* JavaScript의 실행 맥락이란 무엇인가요? 전역 실행 맥락과 함수 실행 맥락의 차이를 설명하세요. -->
+      // Browser Object Module : JavaScript가 브라우저와 소통하기 위해서 만들어진 모델이며 웹브라우저 창에 포함된 모든 객체 요소들, window를 제어함
 
-    <!-- ### 9. **콜 스택 문제** JavaScript에서 콜 스택이 무엇이며, 함수 호출이 콜 스택에서 어떻게 처리되는지 설명하세요. 예시 코드를 포함하세요. -->
+      window.location.href = "https://naver.com";
 
-    <!-- ### 10. **이벤트 루프 문제** *(Extra)* 이벤트 루프의 개념을 설명하고, 비동기 작업이 어떻게 이벤트 루프에 의해 처리되는지 설명하세요. `setTimeout`을 사용한 비동기 예시 코드를 작성하세요. -->
+      // ### 5. **BOM history 문제** *(Extra)*
+      // BOM에서 `window.history` 객체는 어떤 기능을 제공하나요? `history.back()`과 `history.forward()`를 사용하는 예시를 작성하세요.
+
+      window.history; // 사용자의 브라우징 히스토리를 기록하고 있는 배열
+      window.history.back(); // 뒤로 가기
+      window.history.forward(); // 앞으로 가기
+
+      // ### 6. **CSSOM 문제**
+      // CSSOM이 무엇인지 설명하고, JavaScript를 사용해 HTML 요소의 CSS 스타일을 동적으로 변경하는 코드를 작성하세요.
+
+      // CSSOM은 JavaScript를 통해서, 스타일 요소를 지정할 수 있게 해줌
+
+      button.style.fontSize = "16px";
+
+      // ### 7. **Reflow와 Repaint 문제**
+      // Reflow와 Repaint의 차이점을 설명하고, DOM 조작을 최소화하여 성능을 향상시킬 수 있는 방법을 예시와 함께 설명하세요.
+
+      // Reflow는 레이아웃 변경, Repaint는 시각적 속성(색상,배경 등 실제로 화면에 그리는 것)의 변경이라는 차이가 있습니다.
+
+      element.style.cssText =
+        "width: 100px; height: 200px; background-color: blue;";
+
+      // ### 8. **JavaScript 실행 맥락 문제** *(Extra)*
+      // JavaScript의 실행 맥락이란 무엇인가요? 전역 실행 맥락과 함수 실행 맥락의 차이를 설명하세요.
+
+      // JavaScript에서 실행 맥락(Execution Context)이란 특정 코드를 실행하기 위해 필요한 환경, 또는 그 환경을 나타내는 객체입니다.
+      // JavaScript가 실행될 때 전역 실행 컨텍스트(Global Excution Context)가 만들어지고,
+      // 함수가 실행될 때 함수 실행 컨텍스트(Function Excution Context)가 만들어집니다.
+
+      // ### 9. **콜 스택 문제**
+      // JavaScript에서 콜 스택이 무엇이며, 함수 호출이 콜 스택에서 어떻게 처리되는지 설명하세요. 예시 코드를 포함하세요.
+
+      // Call Stack(호출 스택) : 프로그램에서 우리가 어디에 있는지를 기본적으로 기록하는 데이터 구조입니다.
+      // 먼저 입력한 순서대로 쌓이고 마지막에 들어온 것이 가장 먼저 처리됩니다. (First-in -> Last-out)
+
+      function multiply(x, y) {
+        return x * y;
+      }
+
+      function printSquare(x) {
+        var s = multiply(x, x);
+        console.log(s);
+      }
+
+      printSquare(5);
+
+      // ### 10. **이벤트 루프 문제** *(Extra)* 이벤트 루프의 개념을 설명하고, 비동기 작업이 어떻게 이벤트 루프에 의해 처리되는지 설명하세요. `setTimeout`을 사용한 비동기 예시 코드를 작성하세요.
+
+      // 이벤트 루프 : 이벤트 루프는 콜 스택이 다 비워지면 콜백 queue에 존재하는 함수를 하나씩 콜 스택으로 옮기는 역할을 한다.
+      // First-in -> First-out
+
+      function main() {
+        console.log("First");
+        setTimeout(function display() {
+          console.log("Second");
+        }, 0);
+        console.log("Third");
+      }
+      main();
+    </script>
   </body>
 </html>
