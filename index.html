@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>간단한 웹페이지 시연</title>
+  </head>
+  <body>
+    <p class="title">Welcome to JavaScript DOM</p>
+
+    <button class="chageButton">Change Text</button>
+
+    <script>
+      const title = document.getElementById("title");
+      const button = document.getElementsByClassName("chageButton");
+
+      button.addEventListener("click", () => {
+        title.innerHTML = "<strong>클릭 완</strong>";
+      });
+    </script>
+  </body>
+</html>
